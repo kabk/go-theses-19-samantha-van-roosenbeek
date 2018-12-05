@@ -50,7 +50,7 @@ margin-left: 1.5%;
 
 
 section {
-    background-color: blue;
+    /*background-color: blue;*/
     margin-bottom: 1.5%;
     }
 
@@ -58,7 +58,7 @@ section #intro{
     position:relative; 
     width:96%;
     margin: 0 2% 0 2%;
-    background-color: red;
+    /*background-color: red;*/
     }
 #chapters {
   float: left;
@@ -74,7 +74,7 @@ section #intro{
     /*position:relative;*/ 
     width:55%;
     margin-left: 1.5%;
-    background-color: yellow;
+    /*background-color: yellow;*/
     }
 
 #part1{
