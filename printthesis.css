@@ -1,0 +1,286 @@
+@font-face {
+	font-family: 'Ogg-Roman';
+	src: url(font/Ogg-Roman.otf) format('opentype');
+}
+
+@media print {
+	* {
+		font-family: 'Ogg-Roman';
+	}
+	@page {
+		margin-inside: 15mm;
+		margin-outside: 5mm;
+		size: A4 portrait;
+		/*margin: 15mm 5mm 30mm 10mm !important;*/
+		counter-reset: footnote 0;
+
+		@footnotes{
+			padding-top: 1pt;
+			padding-bottom: 1pt;
+			float: bottom;
+			background: none !important;
+			
+		}
+		
+
+	}
+
+	.frontcover {
+		page:cover;
+		width: 100%;
+		height: 100%;
+	}
+	
+	@page:first{
+		margin: 0;
+	}
+
+	/*@page:first{
+		@bottom-right{
+			content: normal;
+			margin: 0;
+		}
+
+		@bottom-left{
+			content: normal;
+			margin: 0;
+		}
+	}*/
+	.hide{display: none;}
+	.hideweb{display: block;}
+
+	.contents {
+
+		page: table-of-contents;
+		counter-reset: page 1;
+	}
+	@page table-of-contents {
+		@top { content: "Table of Contentss" }
+		@bottom {
+			content: counter(page, lower-alpha)
+		}
+	}
+
+	body {
+
+		line-height: 1.3;
+		background: #fff !important;
+		color: #000;
+		font-family: 'Ogg-Roman';
+	}
+	.header {
+		background: none !important;
+	}
+	.header h1 {
+		string-set: doctitle content();
+		page-break-before: always;
+		page-break-after: always;
+		page-break-inside: avoid;
+		vertical-align: middle;
+		font-size: 48pt;
+		text-transform: uppercase; 
+		text-align: center; 
+		line-height: 1;
+		counter-reset: footnote;
+		
+		
+	}
+
+	
+	@page:right{
+		@bottom-left{
+			content: "The Strike of a Ferocious Tigress";
+			margin: 10pt 0 30pt 0;
+			font-size: 9pt;
+			font-family: 'Ogg-Roman';
+			color: black;
+		}
+
+		@bottom-right{
+			content: counter(page);
+			margin: 10pt 0 30pt 0;
+			font-size: 12.5pt;
+			font-family: 'Ogg-Roman';
+			color: black;
+		}
+
+		
+	}
+
+	@page:left{
+		@bottom-right{
+			content: "The Strike of a Ferocious Tigress";
+			margin: 10pt 0 30pt 0;
+			font-size: 9pt;
+			font-family: 'Ogg-Roman';
+			color: black;
+		}
+
+		@bottom-left{
+			content: counter(page);
+			margin: 10pt 0 30pt 0;
+			font-size: 12.5pt;
+			font-family: 'Ogg-Roman';
+			color: black;
+		}
+
+		@top-left{
+			content: string(doctitle);
+			font-size: 12.5pt;
+			font-family: 'Ogg-Roman';
+			color: black;
+		}
+	}
+
+	.wrapper .sections { 	}
+	
+	#blank {
+		page-break-after: always;
+		color: transparent;
+	}
+
+	#intro-text {
+		width: 175mm !important;
+		
+
+	}
+	#part1 h2 {
+		width: 85%;
+		
+		hyphens: auto;
+		font-size: 14pt;
+		margin-left: 40mm;
+
+	}
+
+	h2 {
+		font-size: 16pt;
+		hyphens: auto;
+		/*page-break-inside: avoid;*/
+	}
+.colophon h2 {
+	font-size: 14pt;
+	page-break-before: avoid;
+
+}
+
+
+	.fn {
+		font-family: sans-serif;
+		/*width: 90mm;
+		height: auto;*/
+		margin-left:45mm;
+		counter-increment: footnote;
+/*		display: footnote;
+*/		/*footnote-style-position: outside;*/
+		float: footnote;
+		font-size: 9pt;
+		font-weight: normal;
+		text-indent: 0;
+	}
+
+	.fn::footnote-call {
+		content: counter(footnote);
+		font-size: 8pt;
+		vertical-align: super;
+		line-height: none;
+	}
+	.fn::footnote-marker {
+		content: counter(footnote) " ";
+		font-weight: normal;
+	} 
+
+
+	ul.toc {
+		display: block;
+		font-family: 'Ogg-Roman';
+  		text-transform: uppercase;
+  		list-style: none;
+    	font-size: 16pt;
+    	margin-left: 50mm;
+    	padding: 0;
+	}
+
+	ul.toc a::after {
+		content: leader(space) target-counter(attr(href), page);
+	}
+
+	ul.toc li {
+		line-height: 3;
+	}
+
+	ul.toc li a {
+  text-decoration: none;
+  color: black
+}
+
+	a {
+		color: #000;
+	}
+
+
+/*img{
+		left: 0 !important;
+		}*/
+/*	.images {
+		position: absolute !important;
+		width: 40mm !important;
+		height: auto !important;
+		margin-left: 29mm !important;
+		padding: 3mm !important;
+		
+
+
+		}*/
+		p {
+			font-family: sans-serif;
+			font-size: 9pt;
+		font-weight: normal;
+		text-indent: 0;
+		}
+
+		sup { display: none !important; }
+table,thead,td{
+		border-bottom:1px solid black;
+		text-align:left;
+		font-family: 'Ogg-Roman';
+
+	}
+	table{
+		border-collapse:collapse;
+		width:100%;
+		
+	}
+	th,td{
+		padding:15px;
+		font-size: 12.5pt;
+		word-break: break-word;
+		
+		/*hyphens: auto;*/
+	}
+
+	.tableImages {
+		width: 100%;
+		height: auto;
+	}
+
+	div.printimg {
+		float: left;
+	}
+	.printimg {
+		position: absolute;
+		top:0;
+		width: 32mm;
+		height: auto;
+		padding-top: 0.5mm;
+		padding-left: 0;
+		padding-bottom: 2mm;
+		font-size: 8pt;
+	}
+
+	.printimg img {
+		width: 100%;
+		left:0;
+
+	}
+		}

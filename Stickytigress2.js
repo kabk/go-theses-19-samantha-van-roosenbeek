@@ -40,7 +40,7 @@ $(document).ready(function() {
   $('.images').each(function(i,el){
 
       var tLeft = Math.floor(Math.random()*1000),
-          tTop  = Math.floor(Math.random()*10000);
+          tTop  = Math.floor(Math.random()*22000);
 
       $(el).css({position:'absolute', left: tLeft, top: tTop});
 
